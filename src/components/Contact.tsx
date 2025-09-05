@@ -210,10 +210,14 @@ const Contact: React.FC = () => {
                              font-semibold transition-colors duration-300">
               Schedule Consultation
             </button>
-            <button className="border-2 border-white text-white hover:bg-white hover:text-blue-600 
-                             px-8 py-3 rounded-lg font-semibold transition-all duration-300">
-              Download Resume
-            </button>
+            <a
+                href="/Solidad_Kimeu_Resume.pdf"
+                download
+                className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 rounded-lg font-semibold transition-all duration-300 text-center"
+                >
+                Download Resume
+            </a>
+
           </div>
         </div>
       </div>
