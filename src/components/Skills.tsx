@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { Server, Database, Code, Smartphone, Cloud, Shield } from 'lucide-react';
 
 const Skills: React.FC = () => {

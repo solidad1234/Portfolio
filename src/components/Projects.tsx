@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { ExternalLink, Github, Truck, MessageSquare, Calculator, Users } from 'lucide-react';
 
 const Projects: React.FC = () => {
