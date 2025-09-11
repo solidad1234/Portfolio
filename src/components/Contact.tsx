@@ -14,14 +14,18 @@ const Contact = () => {
   const [success, setSuccess] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  const handleChange = (e) => {
+  // ✅ Typed input/textarea change
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
 
-  const handleSubmit = (e) => {
+  // ✅ Typed form submit
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setSuccess(null);
@@ -29,10 +33,10 @@ const Contact = () => {
 
     emailjs
       .send(
-        "service_omx5fjd",      // replace with your EmailJS service ID
-        "template_zwx4u69",     // replace with your EmailJS template ID
+        "service_omx5fjd",   // replace with your EmailJS service ID
+        "template_zwx4u69",  // replace with your EmailJS template ID
         formData,
-        "WBCBrkFlb8HM2XeJm"       // replace with your EmailJS public key
+        "WBCBrkFlb8HM2XeJm"  // replace with your EmailJS public key
       )
       .then(
         (result) => {
