@@ -1,7 +1,8 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import { Mail, Phone, MapPin, Send, Linkedin, Github } from 'lucide-react';
+import emailjs from 'emailjs-com';
 
-const Contact: React.FC = () => {
+const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -9,19 +10,42 @@ const Contact: React.FC = () => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
-    // Reset form
-    setFormData({ name: '', email: '', company: '', message: '' });
-  };
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setSuccess(null);
+    setError(null);
+
+    emailjs
+      .send(
+        "service_omx5fjd",      // replace with your EmailJS service ID
+        "template_zwx4u69",     // replace with your EmailJS template ID
+        formData,
+        "WBCBrkFlb8HM2XeJm"       // replace with your EmailJS public key
+      )
+      .then(
+        (result) => {
+          console.log("Email sent:", result.text);
+          setSuccess("Message sent successfully ✅");
+          setFormData({ name: '', email: '', company: '', message: '' });
+        },
+        (error) => {
+          console.error("Email error:", error.text);
+          setError("Oops! Something went wrong. Please try again.");
+        }
+      )
+      .finally(() => setLoading(false));
   };
 
   return (
@@ -184,40 +208,23 @@ const Contact: React.FC = () => {
 
               <button
                 type="submit"
+                disabled={loading}
                 className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 
                          hover:to-indigo-700 text-white font-semibold py-4 px-6 rounded-lg 
                          transition-all duration-300 flex items-center justify-center space-x-2 
-                         hover:scale-105 shadow-lg hover:shadow-xl"
+                         hover:scale-105 shadow-lg hover:shadow-xl disabled:opacity-70"
               >
-                <Send className="h-5 w-5" />
-                <span>Send Message</span>
+                {loading ? "Sending..." : (
+                  <>
+                    <Send className="h-5 w-5" />
+                    <span>Send Message</span>
+                  </>
+                )}
               </button>
+
+              {success && <p className="text-green-600 font-medium">{success}</p>}
+              {error && <p className="text-red-600 font-medium">{error}</p>}
             </form>
-          </div>
-        </div>
-
-        {/* Call-to-Action Banner */}
-        <div className="mt-20 bg-gradient-to-r from-emerald-600 to-blue-600 rounded-2xl p-8 text-center text-white">
-          <h3 className="text-3xl font-bold mb-4">
-            Ready to Scale Your Business?
-          </h3>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Whether you need ERPNext customization, API integrations, or complete business automation, 
-            I'm here to help you build solutions that drive growth.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-lg 
-                             font-semibold transition-colors duration-300">
-              Schedule Consultation
-            </button>
-            <a
-                href="/Solidad_Kimeu_Resume.pdf"
-                download
-                className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 rounded-lg font-semibold transition-all duration-300 text-center"
-                >
-                Download Resume
-            </a>
-
           </div>
         </div>
       </div>
