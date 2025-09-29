@@ -9,9 +9,8 @@ const Projects: React.FC = () => {
       description: 'Comprehensive fleet management solution built on ERPNext with real-time vehicle tracking, maintenance scheduling, fuel management, and driver performance analytics.',
       icon: <Truck className="h-8 w-8" />,
       image: 'https://images.pexels.com/photos/1402787/pexels-photo-1402787.jpeg?auto=compress&cs=tinysrgb&w=600',
-      technologies: ['ERPNext', 'Python', 'MariaDB', 'GPS Integration', 'Custom DocTypes'],
+      technologies: ['ERPNext', 'Python', 'MariaDB'],
       features: [
-        'Real-time vehicle tracking with GPS integration',
         'Automated maintenance scheduling and alerts',
         'Fuel consumption monitoring and cost analysis',
         'Driver performance dashboards and reporting',
@@ -49,7 +48,7 @@ const Projects: React.FC = () => {
       description: 'Enhanced ERPNext accounting module with multi-currency support, advanced reporting, automated reconciliation, and compliance features.',
       icon: <Calculator className="h-8 w-8" />,
       image: 'https://images.pexels.com/photos/6863183/pexels-photo-6863183.jpeg?auto=compress&cs=tinysrgb&w=600',
-      technologies: ['ERPNext', 'Custom Reports', 'Python', 'Financial APIs', 'Data Analytics'],
+      technologies: ['ERPNext', 'Custom Reports', 'Python', 'Data Analytics'],
       features: [
         'Multi-currency transactions with real-time rates',
         'Automated bank reconciliation',

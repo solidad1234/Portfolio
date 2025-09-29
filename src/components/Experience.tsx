@@ -34,7 +34,7 @@ const Experience: React.FC = () => {
   ];
 
   const certifications = [
-    'ERPNext Certified Developer',
+    'Bachelors Degree in Software Engineering',
     'Frappe Framework Expert',
     'Python Professional Certification'
   ];
