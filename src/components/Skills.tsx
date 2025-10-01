@@ -89,7 +89,7 @@ const Skills: React.FC = () => {
               <div className="text-blue-100">API Integrations</div>
             </div>
             <div>
-              <div className="text-3xl font-bold mb-2">1+</div>
+              <div className="text-3xl font-bold mb-2">2+</div>
               <div className="text-blue-100">Year Experience</div>
             </div>
             <div>
