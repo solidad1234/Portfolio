@@ -1,37 +1,37 @@
 // import React from 'react';
-import { Server, Database, Code, Smartphone, Cloud, Shield } from 'lucide-react';
+import { Server, Database, Code, Smartphone, Cloud, Users } from 'lucide-react';
 
 const Skills: React.FC = () => {
   const skillCategories = [
     {
       icon: <Server className="h-8 w-8" />,
-      title: 'ERPNext Development',
-      skills: ['Custom DocTypes', 'Workflow Automation', 'Custom Apps', 'Frappe Framework', 'Python Scripting']
-    },
-    {
-      icon: <Smartphone className="h-8 w-8" />,
-      title: 'API Integrations',
-      skills: ['WhatsApp Business API', 'Payment Gateways', 'REST/GraphQL APIs', 'Webhook Development', 'Third-party Services']
+      title: 'Core Technologies',
+      skills: ['Frappe Framework', 'Custom Apps & DocTypes', 'Server & Client Scripts', 'Workflows & Automation', 'Python', 'JavaScript']
     },
     {
       icon: <Database className="h-8 w-8" />,
-      title: 'Business Modules',
-      skills: ['Accounting Systems', 'HR Management', 'Sales & CRM', 'Procurement', 'Inventory Management']
+      title: 'ERPNext Modules',
+      skills: ['Manufacturing', 'Inventory Management', 'Accounting & Finance', 'HR Management', 'Operations', 'Quality Control']
     },
     {
       icon: <Code className="h-8 w-8" />,
-      title: 'Technologies',
-      skills: ['Python', 'JavaScript', 'MariaDB/MySQL', 'Redis', 'Docker', 'Linux']
+      title: 'Frontend / UI',
+      skills: ['Frappe UI Customization', 'Client Scripts', 'React / Next.js', 'Custom Dashboards', 'Print Formats', 'Responsive Design']
+    },
+    {
+      icon: <Smartphone className="h-8 w-8" />,
+      title: 'Backend / Integrations',
+      skills: ['REST API Integration', 'Third-party Services', 'WhatsApp Business API', 'GPS Tracking Systems', 'Background Jobs', 'Webhook Development']
     },
     {
       icon: <Cloud className="h-8 w-8" />,
-      title: 'Infrastructure',
-      skills: ['AWS/GCP', 'CI/CD Pipelines', 'Server Management', 'Backup Strategies', 'Performance Optimization']
+      title: 'Infrastructure & Tools',
+      skills: ['Docker', 'Linux/Ubuntu', 'MariaDB/MySQL', 'Redis', 'Git Version Control', 'CI/CD Pipelines']
     },
     {
-      icon: <Shield className="h-8 w-8" />,
-      title: 'Security & Compliance',
-      skills: ['Data Protection', 'Role-based Access', 'Security Audits', 'Compliance Standards', 'Encryption']
+      icon: <Users className="h-8 w-8" />,
+      title: 'Consulting / Delivery',
+      skills: ['Business Process Analysis', 'Data Migration & Validation', 'User Training', 'Production Support', 'Performance Optimization', 'System Upgrades']
     }
   ];
 
@@ -43,8 +43,8 @@ const Skills: React.FC = () => {
             Technical Expertise
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Deep knowledge in ERPNext ecosystems and enterprise software development, 
-            with a focus on scalable business solutions and seamless integrations.
+            Expert in custom app development, workflow automation, and system optimization 
+            with a proven track record of implementing scalable ERPNext systems.
           </p>
         </div>
 
@@ -81,16 +81,16 @@ const Skills: React.FC = () => {
         <div className="mt-20 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 text-white">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-3xl font-bold mb-2">20+</div>
-              <div className="text-blue-100">ERPNext Projects</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold mb-2">10+</div>
-              <div className="text-blue-100">API Integrations</div>
-            </div>
-            <div>
               <div className="text-3xl font-bold mb-2">2+</div>
-              <div className="text-blue-100">Year Experience</div>
+              <div className="text-blue-100">Years Experience</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold mb-2">30%</div>
+              <div className="text-blue-100">Stock Accuracy Improvement</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold mb-2">40%</div>
+              <div className="text-blue-100">Reduction in Manual Processes</div>
             </div>
             <div>
               <div className="text-3xl font-bold mb-2">100%</div>

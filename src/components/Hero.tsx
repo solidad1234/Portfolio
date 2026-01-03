@@ -16,6 +16,16 @@ const Hero: React.FC = () => {
     }
   };
 
+  const downloadResume = () => {
+    // Create a temporary anchor element to trigger download
+    const link = document.createElement('a');
+    link.href = '/Solidad_Kimeu_-_FrappeERPNext_Developer.docx'; 
+    link.download = 'Solidad_Kimeu_-_FrappeERPNext_Developer.docx';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section
       id="home"
@@ -27,18 +37,18 @@ const Hero: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            Senior
+            Frappe/
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
               {' '}ERPNext{' '}
             </span>
-            Engineer
+            Developer
           </h1>
           
           <p className="text-xl sm:text-2xl text-gray-200 mb-8 leading-relaxed max-w-3xl mx-auto">
             Software engineer specializing in ERPNext customization, API integrations, 
             and enterprise business solutions. Building scalable systems that drive business growth.
           </p>
-
+          
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <button
               onClick={scrollToProjects}
@@ -60,26 +70,34 @@ const Hero: React.FC = () => {
               <Mail className="h-5 w-5" />
             </button>
           </div>
-
+          
           <div className="flex justify-center space-x-6">
             <a
               href="https://github.com/solidad1234"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-white transition-colors p-3 rounded-lg hover:bg-white/10"
+              aria-label="GitHub Profile"
             >
               <Github className="h-6 w-6" />
             </a>
+            
             <a
               href="https://www.linkedin.com/in/solidad-kimeu-b1a578270/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-white transition-colors p-3 rounded-lg hover:bg-white/10"
+              aria-label="LinkedIn Profile"
             >
               <Linkedin className="h-6 w-6" />
             </a>
-            <button className="text-gray-300 hover:text-white transition-colors p-3 rounded-lg hover:bg-white/10 flex items-center space-x-2">
-              <Download className="h-6 w-6" />
+            
+            <button 
+              onClick={downloadResume}
+              className="text-gray-300 hover:text-white transition-colors p-3 rounded-lg hover:bg-white/10 flex items-center space-x-2 group"
+              aria-label="Download Resume"
+            >
+              <Download className="h-6 w-6 group-hover:translate-y-1 transition-transform" />
               <span className="text-sm">Resume</span>
             </button>
           </div>

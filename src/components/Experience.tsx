@@ -4,39 +4,45 @@ import { Calendar, MapPin, Award } from 'lucide-react';
 const Experience: React.FC = () => {
   const experiences = [
     {
-      title: 'ERPNext Developer',
-      company: 'Apex Steel',
+      title: 'Frappe/ERPNext Developer',
+      company: 'Apex Steel Ltd',
       location: 'Nairobi, Kenya',
       period: 'July 2025 - Present',
-      description: 'Developing and maintaining ERPNext solutions for steel manufacturing operations, focusing on inventory management and production workflows.',
+      description: 'Owned and maintained ERPNext deployment for steel manufacturing, covering inventory, production, quality control, and asset management.',
       achievements: [
-        'Customized ERPNext for steel manufacturing processes',
-        'Developed inventory management workflows for raw materials',
-        'Implemented production planning and quality control modules',
-        'Optimized system performance for heavy manufacturing data'
+        'Designed end-to-end inventory and production workflows aligned with factory operations, improving stock accuracy and visibility by 30%',
+        'Developed custom DocTypes, server scripts, client scripts, workflows, and validations to meet manufacturing-specific business requirements',
+        'Implemented production planning and quality control enhancements, enabling real-time tracking of raw materials, WIP, and finished goods',
+        'Optimized ERPNext performance for high-volume transactional data, reducing page load times and improving user efficiency',
+        'Led ERPNext upgrades, troubleshooting, and long-term system stability, acting as primary technical owner',
+        'Collaborated with operations, finance, and management teams to increase user adoption and refine workflows',
+        'Automated repetitive processes, reducing manual data entry and spreadsheet dependency by up to 40%'
       ],
-      technologies: ['ERPNext', 'Python', 'Frappe Framework', 'MariaDB', 'Docker']
+      technologies: ['ERPNext', 'Python', 'Frappe Framework', 'JavaScript', 'MariaDB', 'Docker']
     },
     {
-      title: 'ERPNext Developer',
+      title: 'Frappe/ERPNext Developer',
       company: 'Upeosoft Limited',
       location: 'Nairobi, Kenya',
       period: 'April 2024 - June 2025',
-      description: 'Developed ERPNext solutions for various clients, specializing in business process automation and custom module development.',
+      description: 'Delivered full-cycle ERPNext implementations and customizations across diverse industries, from requirements gathering to production rollout.',
       achievements: [
-        'Implemented fleet management system with GPS tracking integration',
-        'Developed WhatsApp Business API integration for client communications',
-        'Built custom accounting and HR modules for multiple clients',
-        'Delivered projects on time with high client satisfaction'
+        'Analyzed business processes and designed ERPNext solutions aligned with real operational workflows, improving efficiency',
+        'Built custom Frappe apps, DocTypes, reports, dashboards, and print formats tailored to client needs',
+        'Integrated third-party systems including WhatsApp Business API, GPS tracking, and external services via REST APIs',
+        'Customized core ERPNext modules (Accounting, HR, Inventory, Operations) to support client-specific rules',
+        'Led data migration and validation, ensuring accuracy and consistency during go-live',
+        'Provided post-implementation support, performance tuning, and system optimization',
+        'Partnered with clients and internal teams to deliver projects on schedule, balancing technical constraints with business expectations'
       ],
-      technologies: ['ERPNext', 'Python', 'WhatsApp API', 'GPS Integration', 'Custom DocTypes']
+      technologies: ['ERPNext', 'Python', 'Frappe Framework', 'WhatsApp API', 'GPS Integration', 'REST APIs', 'JavaScript']
     }
   ];
 
   const certifications = [
-    'Bachelors Degree in Software Engineering',
+    'Bachelor of Science in Software Engineering - Multimedia University of Kenya (Second Class Honours, Upper Division)',
     'Frappe Framework Expert',
-    'Python Professional Certification'
+    'Python Professional'
   ];
 
   return (
@@ -47,8 +53,8 @@ const Experience: React.FC = () => {
             Professional Experience
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            2+ years of proven track record in enterprise software development 
-            and ERPNext implementations across various industries.
+            2+ years of proven expertise delivering ERP solutions for manufacturing,
+            inventory, HR, and finance/accounting with focus on workflow automation and system optimization.
           </p>
         </div>
 
@@ -119,16 +125,16 @@ const Experience: React.FC = () => {
         {/* Certifications */}
         <div className="mt-20 bg-gradient-to-r from-emerald-50 to-blue-50 rounded-2xl p-8">
           <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-            Certifications & Qualifications
+            Education & Qualifications
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4">
             {certifications.map((cert, index) => (
               <div
                 key={index}
                 className="bg-white p-4 rounded-lg shadow-sm border border-gray-200 
                          flex items-center space-x-3 hover:shadow-md transition-shadow"
               >
-                <Award className="h-6 w-6 text-blue-600" />
+                <Award className="h-6 w-6 text-blue-600 flex-shrink-0" />
                 <span className="font-medium text-gray-800">{cert}</span>
               </div>
             ))}
